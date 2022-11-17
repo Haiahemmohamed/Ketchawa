@@ -3,37 +3,47 @@
 
 @section('page')
 
-    <h1>Devices Management</h1>
+    
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                <h1>Devices Management</h1>
 
 
-    <table class="table table-bordered">
+                <table class="table table-bordered">
 
-        <tr>
-            <th>Device name:</th>
-            <td>{{ $device->name }}</td>
-        </tr>
+                    <tr>
+                        <th>Device name:</th>
+                        <td>{{ $device->name }}</td>
+                    </tr>
 
-        <tr>
+                    <tr>
 
-            <th>Type:</th>
-            <td>{{ $device->type }}</td>
+                        <th>Type:</th>
+                        <td>{{ $device->type }}</td>
 
-        </tr>
+                    </tr>
 
-        <tr>
+                    <tr>
 
-            <th>S/N:</th>
-            <td>{{ $device->sn }}</td>
+                        <th>S/N:</th>
+                        <td>{{ $device->sn }}</td>
 
-        </tr>
+                    </tr>
 
-        <tr>
+                    <tr>
 
-            <th>Location:</th>
-            <td>{{ $device->location }}</td>
+                        <th>Location:</th>
+                        <td>{{ $device->location }}</td>
 
-        </tr>
+                    </tr>
 
-    </table>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
-@endsection
+            @endsection
