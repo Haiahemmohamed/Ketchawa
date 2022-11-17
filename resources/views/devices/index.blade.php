@@ -7,19 +7,19 @@
                 <div class="card">
                     <div class="card-body">
 
-                        
+
                         {{-- <h2>Device Management </h2>
-                        
+
                         <div>
                             <a class="btn btn-success btn-rounded float-right" href="{{ route('devices.create') }}">Ajouter</a>
                         </div> --}}
-                        
+
                         <div class="row mb-3">
                             <div class="col-lg-6">
                             <h2>Device Management </h2>
                         </div>
                             <div class="col-lg-6">
-                                <a class="btn btn-success btn-rounded float-right" href="{{ route('devices.create') }}">Ajouter</a>
+                                <a class="btn btn-success btn-rounded float-right" href="{{ route('devices.create') }}"><i class="fas fas fa-plus-circle"></i></a>
                         </div>
                     </div>
                         @if ($message = Session::get('success'))
@@ -56,11 +56,11 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <a class="btn btn-info" href="{{ route('devices.show', $device->id) }}">Voir</a>
+                                            <a class="btn btn-info" href="{{ route('devices.show', $device->id) }}"><i class="fas fas fa-eye"></i></a>
                                             <a class="btn btn-primary"
-                                                href="{{ route('devices.edit', $device->id) }}">Modifier</a>
+                                                href="{{ route('devices.edit', $device->id) }}"><i class="fas fas fa-edit"></i></a>
 
-                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger"><i class="fas fas fa-trash"></i></button>
 
                                         </form>
                                     </td>
