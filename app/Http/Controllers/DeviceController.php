@@ -42,17 +42,46 @@ class DeviceController extends Controller
     {
         //
         $request->validate([
-            'name'=>'required',
-            'type'=> 'required',
-            'sn' => 'required',
-            'location' => 'required'
+            'service'=>'required',
+            'office'=> 'required',
+            'name' => 'required',
+            'type' => 'required',
+            'sn'=>'required',
+            'model'=> 'required',
+            'cpu' => 'required',
+            'threads' => 'required',
+            'ram'=>'required',
+            'ram_type'=> 'required',
+            'storage' => 'required',
+            'storage_type' => 'required',
+            'os'=>'required',
+            'os_version'=> 'required',
+            'os_activation' => 'required',
+            'os_sn' => 'required',
+            'anti_virus'=>'required',
+            'av_activation'=> 'required',
+            'av_sn' => 'required'
         ]);
 
         $device = new device([
+            'service' => $request->get('service'),
+            'office' => $request->get('office'),
             'name' => $request->get('name'),
             'type' => $request->get('type'),
             'sn' => $request->get('sn'),
-            'location' => $request->get('location')
+            'model' => $request->get('model'),
+            'cpu' => $request->get('cpu'),
+            'threads' => $request->get('threads'),
+            'ram' => $request->get('ram'),
+            'ram_type' => $request->get('ram_type'),
+            'storage' => $request->get('storage'),
+            'storage_type' => $request->get('storage_type'),
+            'os' => $request->get('os'),
+            'os_version' => $request->get('os_version'),
+            'os_sn' => $request->get('os_sn'),
+            'anti_virus' => $request->get('anti_virus'),
+            'av_activation' => $request->get('av_activation'),
+            'av_sn' => $request->get('av_sn'),
         ]);
         $device->save();
 
@@ -96,17 +125,45 @@ class DeviceController extends Controller
     {
         //
         $request->validate([
-            'name'=>'required',
-            'type'=> 'required',
-            'sn' => 'required',
+            'service'=>'required',
+            'office'=> 'required',
+            'name' => 'required',
+            'type' => 'required',
+            'sn'=>'required',
+            'model'=> 'required',
+            'cpu' => 'required',
+            'threads' => 'required',
+            'ram'=>'required',
+            'ram_type'=> 'required',
+            'storage' => 'required',
+            'storage_type' => 'required',
+            'os'=>'required',
+            'os_version'=> 'required',
+            'os_activation' => 'required',
+            'os_sn' => 'required',
+            'anti_virus'=>'required',
+            'av_activation'=> 'required',
             'location' => 'required'
         ]);
 
         $device = device::findOrFail($id);
-        $device->name = $request->get('name');
+        $device->service = $request->get('service');
+        $device->office = $request->get('office');
         $device->type = $request->get('type');
         $device->sn = $request->get('sn');
-        $device->location = $request->get('location');
+        $device->model = $request->get('model');
+        $device->cpu = $request->get('cpu');
+        $device->threads = $request->get('threads');
+        $device->ram = $request->get('ram');
+        $device->ram_type = $request->get('ram_type');
+        $device->storage = $request->get('storage');
+        $device->storage_type = $request->get('storage_type');
+        $device->os = $request->get('os');
+        $device->os_version = $request->get('os_version');
+        $device->os_sn = $request->get('os_sn');
+        $device->anti_virus = $request->get('anti_virus');
+        $device->av_activation = $request->get('av_activation');
+        $device->av_sn = $request->get('av_sn');
         $device->update();
 
         return Redirect::route('devices.index');

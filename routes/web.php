@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -18,3 +19,4 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('homes.index');
 
 Route::resources(['devices' => DeviceController::class,]);
+Route::resources(['users' => UserController::class,]);
