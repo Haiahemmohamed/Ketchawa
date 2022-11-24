@@ -40,7 +40,10 @@ My MVPS are(just an examples raouf):
 - Customers
 - Suppliers
 - Invoices
+<<<<<<< HEAD
 - Categories & Sub-categories
+=======
+>>>>>>> 666ac8dcd4a9f52e84a1d14b631410448c3f6445
 - Multi-Location
 - Operations & Tasks
 - Mobile Access
