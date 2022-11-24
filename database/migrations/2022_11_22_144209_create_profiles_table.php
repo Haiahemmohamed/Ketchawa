@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->string('first_name'); // nouveau
+            $table->string('last_name'); // nouveau
+            $table->string('job'); // nouveau
+            $table->string('department'); // nouveau
+            $table->string('profil'); // nouveau
+            $table->string('office'); // nouveau
             $table->timestamps();
         });
     }

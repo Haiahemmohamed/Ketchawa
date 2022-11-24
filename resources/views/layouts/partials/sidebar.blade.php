@@ -45,6 +45,22 @@
                             </ul>
                         </li>
 
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                            aria-expanded="false"><i class="fas fa-handshake"></i><span
+                                class="hide-menu">Helpdesk
+                            </span></a>
+                            <ul aria-expanded="false" class="collapse first-level base-level-line">
+                                <li class="sidebar-item"><a href="{{ route('tickets.index') }}" class="sidebar-link"><span
+                                            class="hide-menu"> Tickets </span></a></li>
+
+                                <li class="sidebar-item"><a href="icon-simple-lineicon.html" class="sidebar-link"><span
+                                            class="hide-menu"> Open Ticket </span></a></li>
+
+                                <li class="sidebar-item"><a href="icon-simple-lineicon.html" class="sidebar-link"><span
+                                            class="hide-menu"> Dashboard </span></a></li>
+                            </ul>
+                        </li>
+
                         {{-- <li class="sidebar-item"> <a class="sidebar-link" href="{{ route('devices.index') }}">
                             <i class="fas fa-laptop"></i><span
                                 class="hide-menu">Devices

@@ -16,7 +16,7 @@
 
                         <h4 class="card-title mb-3">Users Management</h4>
 
-                        <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
+                        {{-- <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
                             <li class="nav-item active">
                                 <a href="#home-b2" data-toggle="tab" aria-expanded="true" class="nav-link">
                                     <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
@@ -36,7 +36,7 @@
                                     <span class="d-none d-lg-block">Permissions</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
 
                         <div class="tab-content">
                             <div class="tab-pane show active" id="home-b2">

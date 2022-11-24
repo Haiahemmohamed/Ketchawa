@@ -130,7 +130,7 @@ class UserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        $User->delete();
+        $user->delete();
 
         return Redirect::route('users.index');
     }

@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->date('open_date'); // nouveau
+            $table->string('title'); // nouveau
+            $table->string('requester'); // nouveau
+            $table->string('department'); // nouveau
+            $table->string('office'); // nouveau
+            $table->string('job'); // nouveau
+            $table->string('ticket_category'); // nouveau
+            $table->string('priority'); // nouveau
+            $table->string('ticket_status'); // nouveau
+            $table->string('description'); // nouveau
             $table->timestamps();
         });
     }
