@@ -10,6 +10,5 @@ class User extends Model
     use HasFactory;
 	public $timestamps = true;
     protected $fillable = [
-		'first_name', 'last_name','job', 'department', 'profil', 'office',
-	];
+		'name', 'email','password'];
 }
