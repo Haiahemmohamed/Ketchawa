@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('assets/images/favicon.png') }}">
-    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <title> Ketchawa</title>
     <!-- Custom CSS -->
 
     <link rel="stylesheet" href="{{ URL::asset('assets/extra-libs/c3/c3.min.css') }}" />
