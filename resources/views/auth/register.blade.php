@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -57,4 +57,65 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}
+@extends('layouts.guest')
+
+
+@section('page')
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Login box.scss -->
+    <!-- ============================================================== -->
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
+        style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
+        <div class="auth-box row text-center">
+            <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(../assets/images/InventoryManagement.png);">
+            </div>
+            <div class="col-lg-5 col-md-7 bg-white">
+                <div class="p-3">
+                    <img src="../assets/images/big/icon.png" alt="wrapkit">
+                    <h2 class="mt-3 text-center">Sign Up for Free</h2>
+                    <form class="mt-4" action="{{ route('register') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="text"  id="name" name="name" placeholder="your name" value="{{ old('name') }}">
+                                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="email" id="email" name="email" placeholder="email address" value="{{ old('email') }}">
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="password" id="password" name="password" placeholder="password" value="{{ old('password') }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" placeholder="password confirmation" value="{{ old('password') }}">
+                                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" class="btn btn-block btn-dark">Sign Up</button>
+                            </div>
+                            <div class="col-lg-12 text-center mt-5">
+                                Already have an account? <a href="{{ route('login') }}" class="text-danger">Sign In</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Login box.scss -->
+    <!-- ============================================================== -->
+@endsection

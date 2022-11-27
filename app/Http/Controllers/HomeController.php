@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHomeRequest;
 use App\Http\Requests\UpdateHomeRequest;
 use App\Models\Home;
+use Illuminate\Support\Facades\App;
+// use Illuminate\Support\Facades\URL;
+use Throwable;
 
 class HomeController extends Controller
 {
@@ -30,6 +33,7 @@ class HomeController extends Controller
      */
     public function create()
     {
+        return view("index");
         //
     }
 
@@ -87,5 +91,19 @@ class HomeController extends Controller
     public function destroy(Home $home)
     {
         //
+    }
+
+    public function setlocale($locale)
+    {
+        try {
+            app()->setLocale($locale);
+            session()->put('locale', $locale);
+            // url()->defaults(['locale' => $locale]);
+            // URL::defaults(['locale' => $locale]);
+            return redirect()->back();
+        } catch (Throwable $e) {
+            report($e);
+            return false;
+        }
     }
 }

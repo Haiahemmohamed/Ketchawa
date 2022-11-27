@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +18,32 @@ use App\Http\Controllers\TicketController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
+    Route::resources(['homes' => DeviceController::class,]);
+    Route::resources(['devices' => DeviceController::class,]);
+    Route::resources(['users' => UserController::class,]);
+    Route::resources(['tickets' => TicketController::class,]);
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('setlocale/{lang}', [HomeController::class, 'setlocale'])->name('lang');
+
+    Route::get('/', function () {
+        return view('index');
 });
 
-Route::resources(['homes' => DeviceController::class,]);
-Route::resources(['devices' => DeviceController::class,]);
-Route::resources(['users' => UserController::class,]);
-Route::resources(['tickets' => TicketController::class,]);
+Route::get('/index', function () {
+    return view('index');
+});//->name('dashboard');
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+
+});
+
 
 require __DIR__.'/auth.php';
