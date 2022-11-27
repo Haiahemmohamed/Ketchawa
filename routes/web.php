@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'locale')->group(function () {
     Route::resources(['homes' => DeviceController::class,]);
     Route::resources(['devices' => DeviceController::class,]);
     Route::resources(['users' => UserController::class,]);

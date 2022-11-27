@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\App;
 use Closure;
-use Illuminate\Http\Request;
 
 class Localization
 {
