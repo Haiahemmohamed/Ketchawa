@@ -18,14 +18,13 @@
                                 class="hide-menu">Inventory
                             </span></a>
                             <ul aria-expanded="false" class="collapse first-level base-level-line">
-                                <li class="sidebar-item"><a href="{{ route('devices.index') }}" class="sidebar-link"><span
-                                            class="hide-menu"> Computers </span></a></li>
+                                <li class="sidebar-item"><a href="{{ route('devices.index') }}" class="sidebar-link"><span class="hide-menu"> Computers </span></a></li>
 
-                                <li class="sidebar-item"><a href="index.html" class="sidebar-link"><span
-                                            class="hide-menu"> Network Devices  </span></a></li>
+                                <li class="sidebar-item"><a href="index.html" class="sidebar-link"><span class="hide-menu"> Network Devices  </span></a></li>
 
-                                <li class="sidebar-item"><a href="index.html" class="sidebar-link"><span
-                                            class="hide-menu"> Servers & Storage </span></a></li>
+                                <li class="sidebar-item"><a href="index.html" class="sidebar-link"><span class="hide-menu"> Servers & Storage </span></a></li>
+
+                                <li class="sidebar-item"><a href="index.html" class="sidebar-link"><span class="hide-menu"> Software & Licenses </span></a></li>
                             </ul>
                         </li>
 

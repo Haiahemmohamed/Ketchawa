@@ -1,5 +1,0 @@
-git checkout resources/views/layouts/partials/head.blade.php
-git status
-git add .
-git commit -m "Update Title"
-git push
