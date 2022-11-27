@@ -11,7 +11,7 @@
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="/">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
@@ -22,9 +22,10 @@
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                {{-- <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" /> --}}
                                 <!-- Light Logo text -->
-                                <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                                {{-- <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> --}}
+                                Ketchawa
                             </span>
                         </a>
                     </div>
@@ -138,15 +139,28 @@
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
+
+                        {{-- <li class="nav-item {{ $local == 'ar' ? 'pull-right' : '' }}">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                <img class="flag-icon"
+                                    src="{{ URL::asset('') }}img/flag/{{ $local == 'en' ? 'united-states' : ($local == 'ar' ? 'algeria' : 'france') }}.png"
+                                    alt="" />
+                                <span class="profile-text font-weight-medium d-none d-md-block">
+                                    {{ $local == 'en' ? 'English' : ($local == 'ar' ? 'العربية' : 'Français') }}
+                                </span>
+                                <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+                            </a>
+                        </li> --}}
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="javascript:void(0)">
                                 <div class="customize-input">
-                                    <select
-                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                        <option selected>EN</option>
-                                        <option value="1">AB</option>
-                                        <option value="2">AK</option>
-                                        <option value="3">BE</option>
+                                    <select class="custom-select form-control bg-white custom-radius custom-shadow border-0" onchange="location = this.value;">
+                                        <option {{ App()->currentLocale() == 'ar' ? 'selected' : '' }}
+                                            value="{{ route('lang', 'ar') }}">العربية</option>
+                                        <option {{ App()->currentLocale() == 'en' ? 'selected' : '' }}
+                                            value="{{ route('lang', 'en') }}">English</option>
+                                        <option {{ App()->currentLocale() == 'fr' ? 'selected' : '' }}
+                                            value="{{ route('lang', 'fr') }}">Français</option>
                                     </select>
                                 </div>
                             </a>
@@ -179,8 +193,8 @@
                                 <img src="../assets/images/users/profile-pic.jpg" alt="user"
                                     class="rounded-circle" width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
-                                        class="svg-icon"></i></span>
+                                        class="text-dark">{{ Auth::user()->name }}</span> <i
+                                        data-feather="chevron-down" class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
@@ -197,11 +211,20 @@
                                         class="svg-icon mr-2 ml-1"></i>
                                     Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                <a class="dropdown-item" href="{{ route('logout.get') }}"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
+                                {{-- <form class="mt-4" action="{{ route('logout') }}" method="POST">
+                        @csrf
+
+                                    <div class="col-lg-12 text-center">
+                                        <button type="submit" class="dropdown-item">
+                                            <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Logout</button>
+                                    </div>
+                                </form> --}}
                                 <div class="dropdown-divider"></div>
-                                <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View
+                                <div class="pl-4 p-3"><a href="{{ route('profile.edit') }}"
+                                        class="btn btn-sm btn-info">View
                                         Profile</a></div>
                             </div>
                         </li>

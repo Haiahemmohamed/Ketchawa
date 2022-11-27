@@ -1,5 +1,8 @@
-<x-guest-layout>
-    <x-auth-card>
+@extends('layouts.guest')
+
+
+@section('page')
+    {{-- <x-auth-card>
         <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
@@ -51,5 +54,55 @@
                 </x-primary-button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </x-auth-card> --}}
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Login box.scss -->
+    <!-- ============================================================== -->
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
+        style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
+        <div class="auth-box row">
+            <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(../assets/images/InventoryManagement.png);">
+            </div>
+            <div class="col-lg-5 col-md-7 bg-white">
+                <div class="p-3">
+                    <div class="text-center">
+                        <img src="../assets/images/big/icon.png" alt="wrapkit">
+                    </div>
+                    <h2 class="mt-3 text-center">Sign In</h2>
+                    <p class="text-center">Enter your email address and password to access admin panel.</p>
+                        <form class="mt-4" action="{{ route('login') }}" method="POST">
+                            @csrf
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="text-dark" for="email">Email</label>
+                                    <input class="form-control" id="email" name="email" type="text" placeholder="enter your email" value="{{ old('email') }}">
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="text-dark" for="password">Password</label>
+                                    <input class="form-control" id="password" name="password" type="password" placeholder="enter your password" value="{{ old('password') }}">
+                                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" class="btn btn-block btn-dark">Sign In</button>
+                            </div>
+                            <div class="col-lg-12 text-center mt-5">
+                                Don't have an account? <a href="{{ route('register') }}" class="text-danger">Sign Up</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Login box.scss -->
+    <!-- ============================================================== -->
+@endsection
